@@ -1,0 +1,23 @@
+{
+    "name": "sinjuice/php-burrow",
+    "type": "library",
+    "description": "Burrow client for PHP >=5.4",
+    "keywords": ["burrow","kafka","client"],
+    "homepage": "https://github.com/sinjuice/php-burrow",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Stefan Gatu",
+            "email": "stefan.gatu@gmai.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Burrow\\": "src/"
+        }
+    }
+}
