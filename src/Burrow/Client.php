@@ -80,7 +80,7 @@ class Client
     */
     public function getClusters()
     {
-        $result = $this->_request("/v2/kafka");
+        $result = $this->_request("/v3/kafka");
         if(!$result || $result['error'] != false){
             return false;
         }
@@ -93,7 +93,7 @@ class Client
     */
     public function getClusterInfo($cluster)
     {
-        $result = $this->_request("/v2/kafka/$cluster");
+        $result = $this->_request("/v3/kafka/$cluster");
         if(!$result || $result['error'] != false){
             return false;
         }
@@ -140,7 +140,7 @@ class Client
     */
     public function getConsumers($cluster)
     {
-        $result = $this->_request("/v2/kafka/$cluster/consumer");
+        $result = $this->_request("/v3/kafka/$cluster/consumer");
         if(!$result || $result['error'] != false){
             return false;
         }
@@ -154,7 +154,7 @@ class Client
     */
     public function getConsumerTopics($cluster, $consumer)
     {
-        $result = $this->_request("/v2/kafka/$cluster/consumer/$consumer/topic");
+        $result = $this->_request("/v3/kafka/$cluster/consumer/$consumer/topic");
         if(!$result || $result['error']){
             return false;
         }
@@ -169,7 +169,7 @@ class Client
     */
     public function getConsumerOffsets($cluster, $consumer, $topic)
     {
-        $result = $this->_request("/v2/kafka/$cluster/consumer/$consumer/topic/$topic");
+        $result = $this->_request("/v3/kafka/$cluster/consumer/$consumer/topic/$topic");
         if(!$result || $result['error']){
             return false;
         }
@@ -182,7 +182,7 @@ class Client
     */
     public function getTopics($cluster)
     {
-        $result = $this->_request("/v2/kafka/$cluster/topic");
+        $result = $this->_request("/v3/kafka/$cluster/topic");
         if(!$result || $result['error']){
             return false;
         }
@@ -197,7 +197,7 @@ class Client
     */
     public function getTopicOffsets($cluster, $topic)
     {
-        $result = $this->_request("/v2/kafka/$cluster/topic/$topic");
+        $result = $this->_request("/v3/kafka/$cluster/topic/$topic");
         if(!$result || $result['error']){
             return false;
         }
@@ -205,7 +205,7 @@ class Client
     }
 
     public function getConsumerStatus($cluster, $consumer){
-        $result = $this->_request("/v2/kafka/$cluster/consumer/$consumer/lag");
+        $result = $this->_request("/v3/kafka/$cluster/consumer/$consumer/lag");
         if(!$result || $result['error']){
             return false;
         }
@@ -249,7 +249,7 @@ class Client
     */
     public function deleteConsumer($cluster, $consumer)
     {
-        $result = $this->_request("/v2/kafka/$cluster/consumer/$consumer", "DELETE");
+        $result = $this->_request("/v3/kafka/$cluster/consumer/$consumer", "DELETE");
         if(!$result || $result["error"] != false){
             return false;
         }
